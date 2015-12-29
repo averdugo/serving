@@ -10,15 +10,10 @@
 
   <title>Serving App</title>
 
-  <!--icheck-->
-  <link href="{{ url('/js/iCheck/skins/minimal/minimal.css') }}" rel="stylesheet">
-  <link href="{{ url('/js/iCheck/skins/square/square.css') }}" rel="stylesheet">
-  <link href="{{ url('/js/iCheck/skins/square/red.css') }}" rel="stylesheet">
-  <link href="{{ url('/js/iCheck/skins/square/blue.css') }}" rel="stylesheet">
-
-  <!--dashboard calendar-->
-  <link href="{{ url('/css/clndr.css') }}" rel="stylesheet">
-
+  <!--dynamic table-->
+  <link href="/js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+  <link href="/js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/js/data-tables/DT_bootstrap.css" />
 
   <!--common-->
   <link href="{{ url('/css/style.css') }}" rel="stylesheet">
@@ -37,6 +32,8 @@
 
 @yield('content')
 
+@include('modales/crearUsuario')
+
 <!-- Placed js at the end of the document so the pages load faster -->
 <script src="{{ url('/js/jquery-1.10.2.min.js') }}"></script>
 <script src="{{ url('/js/jquery-ui-1.9.2.custom.min.js') }}"></script>
@@ -45,27 +42,15 @@
 <script src="{{ url('/js/modernizr.min.js') }}"></script>
 <script src="{{ url('/js/jquery.nicescroll.js') }}"></script>
 
-<!--easy pie chart-->
-<script src="{{ url('/js/easypiechart/jquery.easypiechart.js') }}"></script>
-<script src="{{ url('/js/easypiechart/easypiechart-init.js') }}"></script>
+<!--dynamic table-->
+<script type="text/javascript" language="javascript" src="/js/advanced-datatable/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="/js/data-tables/DT_bootstrap.js"></script>
+<!--dynamic table initialization -->
+<script src="/js/dynamic_table_init.js"></script>
 
-<!--Sparkline Chart-->
-<script src="{{ url('/js/sparkline/jquery.sparkline.js') }}"></script>
-<script src="{{ url('/js/sparkline/sparkline-init.js') }}"></script>
 
-<!--icheck -->
-<script src="{{ url('/js/iCheck/jquery.icheck.js') }}"></script>
-<script src="{{ url('/js/icheck-init.js') }}"></script>
 
-<!-- jQuery Flot Chart-->
-<script src="{{ url('/js/flot-chart/jquery.flot.js') }}"></script>
-<script src="{{ url('/js/flot-chart/jquery.flot.tooltip.js') }}"></script>
-<script src="{{ url('/js/flot-chart/jquery.flot.resize.js') }}"></script>
-<script src="{{ url('/js/flot-chart/jquery.flot.pie.resize.js') }}"></script>
-<script src="{{ url('/js/flot-chart/jquery.flot.selection.js') }}"></script>
-<script src="{{ url('/js/flot-chart/jquery.flot.stack.js') }}"></script>
-<script src="{{ url('/js/flot-chart/jquery.flot.time.js') }}"></script>
-<script src="{{ url('/js/main-chart.js') }}"></script>
+
 
 <!--common scripts for all pages-->
 <script src="{{ url('/js/scripts.js') }}"></script>
