@@ -24,4 +24,5 @@ Route::controllers([
 Route::group(['prefix'=>'admin','namespace'=>'Admin'], function(){
 	Route::resource('users','UsersController');
 	Route::resource('allowances','AllowanceController');
+	Route::resource('cars','CarController');
 });

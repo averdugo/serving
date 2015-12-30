@@ -48,8 +48,10 @@
 <script src="/js/dynamic_table_init.js"></script>
 
 
-@yield('JScontrollers')
-
+<!--Controllers-->
+<script src="/js/JScontrollers/users.js"></script>
+<script src="/js/JScontrollers/allowances.js"></script>
+<script src="/js/JScontrollers/cars.js"></script>
 
 <!--common scripts for all pages-->
 <script src="{{ url('/js/scripts.js') }}"></script>
@@ -62,5 +64,6 @@
 
 @include('admin.users.crearUsuario')
 @include('admin.allowances.crearAllowance')
+@include('admin.cars.crearCar')
 </body>
 </html>

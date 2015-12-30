@@ -18,22 +18,20 @@
             <div class="media logged-user">
                 <img alt="" src="/images/photos/user-avatar.png" class="media-object">
                 <div class="media-body">
-                    <h4><a href="#">John Doe</a></h4>
+                    <h4><a href="#">{{ Auth::user()->name }}</a></h4>
                     <span>"Hello There..."</span>
                 </div>
             </div>
 
             <h5 class="left-nav-title">Account Information</h5>
             <ul class="nav nav-pills nav-stacked custom-nav">
-                <li><a href="#"><i class="fa fa-user"></i> <span>Profile</span></a></li>
-                <li><a href="#"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
                 <li><a href="#"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
             </ul>
         </div>
 
         <!--sidebar nav start-->
         <ul class="nav nav-pills nav-stacked custom-nav">
-            <li class="menu-list nav-active"><a href="/home"><i class="fa fa-home"></i> <span>Inicio</span></a>
+            <li class="menu-list"><a href="/home"><i class="fa fa-home"></i> <span>Inicio</span></a>
                 <ul class="sub-menu-list">
                     <li><a href="index_alt.html">Gantt DT</a></li>
                     <li ><a href="index.html">Gantt ASR</a></li>
@@ -56,14 +54,10 @@
                     <li><a href="admin/allowances">Listado</a></li>
                 </ul>
             </li>
-            <li class="menu-list"><a href=""><i class="fa fa-cogs"></i> <span>Components</span></a>
+            <li class="menu-list"><a href=""><i class="fa fa-cogs"></i> <span>Autos</span></a>
                 <ul class="sub-menu-list">
-                    <li><a href="grids.html"> Grids</a></li>
-                    <li><a href="gallery.html"> Media Gallery</a></li>
-                    <li><a href="calendar.html"> Calendar</a></li>
-                    <li><a href="tree_view.html"> Tree View</a></li>
-                    <li><a href="nestable.html"> Nestable</a></li>
-
+                    <li><a href="#" class="masCar2">Crear</a></li>
+                    <li><a href="admin/cars">Listado</a></li>
                 </ul>
             </li>
 

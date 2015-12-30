@@ -101,6 +101,3 @@
 @section('modales')
     @include('admin.users.editarUsuario')
 @endsection
-@section('JScontrollers')
-    <script src="/js/JScontrollers/users.js"></script>
-@endsection

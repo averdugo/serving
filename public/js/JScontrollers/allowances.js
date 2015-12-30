@@ -33,8 +33,8 @@ function editAllowance(){
     var url ="/admin/allowances/"+form.id;
 
     $.post(url,form,function(result){
-        $('#editarUsuario').modal('hide');
-        alert('Usuario Actualizado');
+        $('#editarAllowance').modal('hide');
+        alert('Viatico Actualizado');
         location.reload();
     });
 }

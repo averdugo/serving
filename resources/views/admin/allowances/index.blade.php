@@ -70,8 +70,5 @@
     @section('modales')
         @include('admin.allowances.editarAllowance')
     @endsection
-    @section('JScontrollers')
-        <script src="/js/JScontrollers/allowances.js"></script>
-    @endsection
 
 @endsection

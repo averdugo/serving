@@ -56,4 +56,33 @@ $(document).ready(function(){
         deleteAllowance(id);
     })
     /*Allowances CRUD*/
+    /**/
+    /*Cars CRUD*/
+    $('body').on('click','.crearCar',function(e){
+        e.preventDefault();
+        addCar();
+    })
+    $('body').on('click','.masCar',function(){
+        swcar = false;
+        $('#crearCar').modal();
+    })
+
+    $('body').on('click','.masCar2',function(){
+        swcar = true;
+        $('#crearCar').modal();
+    })
+    $('body').on('click','.editCar',function(){
+        var id = $(this).data('id');
+        getCar(id)
+
+    })
+    $('body').on('click','.editarCar',function(e){
+        e.preventDefault();
+        editCar();
+    })
+    $('body').on('click','.deleteCar',function(e){
+        var id = $(this).data('id');
+        deleteCar(id);
+    })
+    /*Cars CRUD*/
 })
