@@ -70,7 +70,7 @@
                                                 </span>
                                                 <span class="pull-right">
                                                     <button class="btn btn-default editUser" data-id="{{$user->id}}" ><i class="glyphicon glyphicon-pencil"></i></button>
-                                                    <button class="btn btn-default deleteUser" data-id="{{$user->id}}" ><i class="glyphicon glyphicon-remove"></i></button>
+                                                    <button class="btn btn-danger deleteUser" data-id="{{$user->id}}" ><i class="glyphicon glyphicon-remove"></i></button>
                                                 </span>
                                             </h4>
                                             <div class="media">
@@ -99,7 +99,7 @@
         {!! Form::close() !!}
 @endsection
 @section('modales')
-    @include('modales/editarUsuario')
+    @include('admin.users.editarUsuario')
 @endsection
 @section('JScontrollers')
     <script src="/js/JScontrollers/users.js"></script>

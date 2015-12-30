@@ -50,15 +50,10 @@
                     <li><a href="admin/users">Listado</a></li>
                 </ul>
             </li>
-            <li class="menu-list"><a href=""><i class="fa fa-book"></i> <span>UI Elements</span></a>
+            <li class="menu-list"><a href=""><i class="fa fa-laptop"></i> <span>Viaticos</span></a>
                 <ul class="sub-menu-list">
-                    <li><a href="general.html"> General</a></li>
-                    <li><a href="buttons.html"> Buttons</a></li>
-                    <li><a href="tabs-accordions.html"> Tabs & Accordions</a></li>
-                    <li><a href="typography.html"> Typography</a></li>
-                    <li><a href="slider.html"> Slider</a></li>
-                    <li><a href="panels.html"> Panels</a></li>
-                    <li><a href="widgets.html"> Widgets</a></li>
+                    <li><a href="#" class="masAllowance2">Crear</a></li>
+                    <li><a href="admin/allowances">Listado</a></li>
                 </ul>
             </li>
             <li class="menu-list"><a href=""><i class="fa fa-cogs"></i> <span>Components</span></a>

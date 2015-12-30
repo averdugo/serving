@@ -18,7 +18,7 @@
                     </div>
                     <div class="form-group">
                             {!! Form::label('email', 'E-Mail') !!}
-                            {!! Form::text('email',null, ['class'=>'form-control', 'placeholder'=>'email@serving.cl']) !!}
+                            {!! Form::email('email',null, ['class'=>'form-control', 'placeholder'=>'email@serving.cl']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('phone', 'Telefono') !!}

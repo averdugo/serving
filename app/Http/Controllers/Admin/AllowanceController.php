@@ -1,10 +1,10 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Illuminate\Http\Request;
 use App\Allowance;
+use Illuminate\Support\Facades\Request;
 
 class AllowanceController extends Controller {
 
@@ -15,17 +15,8 @@ class AllowanceController extends Controller {
 	 */
 	public function index()
 	{
-		//
-	}
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
+        $allowances = Allowance::paginate();
+        return view('admin.allowances.index',compact('allowances'));
 	}
 
 	/**
@@ -35,7 +26,9 @@ class AllowanceController extends Controller {
 	 */
 	public function store()
 	{
-		//
+        $allowances = new Allowance(Request::all());
+        $allowances->save();
+        return $allowances;
 	}
 
 	/**
@@ -57,7 +50,8 @@ class AllowanceController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+        $allowances = Allowance::findOrFail($id);
+        return $allowances;
 	}
 
 	/**
@@ -68,7 +62,9 @@ class AllowanceController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+        $allowances = Allowance::findOrFail($id);
+        $allowances->fill(Request::all());
+        $allowances->save();
 	}
 
 	/**
@@ -79,7 +75,10 @@ class AllowanceController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+        $allowances = Allowance::findOrFail($id);
+        $allowances->delete();
+
+        return $id;
 	}
 
 }

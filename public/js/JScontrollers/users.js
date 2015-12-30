@@ -35,22 +35,12 @@ function editUser(){
     var url ="/admin/users/"+form.id;
 
     $.post(url,form,function(result){
-        $('#editarUsuario').modal('hide');User
+        $('#editarUsuario').modal('hide');
         alert('Usuario Actualizado');
         location.reload();
     });
 }
-function editUser(){
 
-    var form = $('#editarUsuarioForm').serializeObject();
-    var url ="/admin/users/"+form.id;
-
-    $.post(url,form,function(result){
-        $('#editarUsuario').modal('hide');User
-        alert('Usuario Actualizado');
-        location.reload();
-    });
-}
 function deleteUser(id){
 
     var form = $('#deleteForm').serializeObject();
@@ -60,32 +50,3 @@ function deleteUser(id){
         $("#user"+result).remove();
     });
 }
-$(document).ready(function(){
-
-    $('body').on('click','.crearUsuario',function(e){
-        e.preventDefault();
-        addUser();
-    })
-    $('body').on('click','.masUser',function(){
-        swuser = false;
-        $('#crearUsuario').modal();
-    })
-
-    $('body').on('click','.masUser2',function(){
-        swuser = true;
-        $('#crearUsuario').modal();
-    })
-    $('body').on('click','.editUser',function(){
-        var id = $(this).data('id');
-        getUser(id)
-
-    })
-    $('body').on('click','.editarUsuario',function(e){
-        e.preventDefault();
-        editUser();
-    })
-    $('body').on('click','.deleteUser',function(e){
-        var id = $(this).data('id');
-        deleteUser(id);
-    })
-})

@@ -48,7 +48,7 @@
 <script src="/js/dynamic_table_init.js"></script>
 
 
-
+@yield('JScontrollers')
 
 
 <!--common scripts for all pages-->
@@ -58,8 +58,9 @@
 
 @yield('modales')
 
-@yield('JScontrollers')
 
-@include('modales/crearUsuario')
+
+@include('admin.users.crearUsuario')
+@include('admin.allowances.crearAllowance')
 </body>
 </html>
