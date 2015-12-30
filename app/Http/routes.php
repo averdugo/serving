@@ -15,6 +15,8 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+Route::get('admin/owners/option', 'Admin\OwnerController@option');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
@@ -27,4 +29,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'], function(){
 	Route::resource('cars','CarController');
 	Route::resource('groups','GroupController');
 	Route::resource('indicators','IndicatorController');
+	Route::resource('owners','OwnerController');
+	Route::resource('reports','ReportController');
+	Route::resource('requesters','RequesterController');
+	Route::resource('sites','SiteController');
 });

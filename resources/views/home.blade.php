@@ -19,65 +19,66 @@
 
                 <div class="row states-info" style="    padding: 80px;">
                     <div class="col-md-6">
-                        <div class="panel red-bg">
+                        <div class="panel green-bg" style="cursor: pointer">
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-xs-4">
-                                        <i class="fa fa-money"></i>
+                                        <i class="fa fa-list-alt"></i>
                                     </div>
                                     <div class="col-xs-8">
-                                        <span class="state-title"> Dollar Profit Today </span>
-                                        <h4>$ 23,232</h4>
+                                        <h2>OTS</h2>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="panel blue-bg">
+                        <div class="panel red-bg" style="cursor: pointer">
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-xs-4">
-                                        <i class="fa fa-tag"></i>
+                                        <i class="fa fa-calendar"></i>
                                     </div>
                                     <div class="col-xs-8">
-                                        <span class="state-title">  Copy Sold Today  </span>
-                                        <h4>2,980</h4>
+                                        <h2>Gantt's</h2>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-6">
-                        <div class="panel green-bg">
+                        <div class="panel blue-bg" >
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-xs-4">
-                                        <i class="fa fa-gavel"></i>
+                                        <i class="fa fa-pie-chart"></i>
                                     </div>
                                     <div class="col-xs-8">
-                                        <span class="state-title">  New Order  </span>
-                                        <h4>5980</h4>
+                                        <h2>Indicadores KPI</h2>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-6">
                         <div class="panel yellow-bg">
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-xs-4">
-                                        <i class="fa fa-eye"></i>
+                                        <i class="fa fa-briefcase"></i>
                                     </div>
                                     <div class="col-xs-8">
-                                        <span class="state-title">  Unique Visitors  </span>
-                                        <h4>10,000</h4>
+                                        <h2>Documentos</h2>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
             <!--body wrapper end-->

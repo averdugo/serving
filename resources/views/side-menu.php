@@ -73,56 +73,22 @@
                     <li><a href="/admin/indicators">Listado</a></li>
                 </ul>
             </li>
-
-            <li class="menu-list"><a href=""><i class="fa fa-tasks"></i> <span>Forms</span></a>
+            <li class="menu-list"><a href=""><i class="fa fa-industry"></i> <span>Dueños</span></a>
                 <ul class="sub-menu-list">
-                    <li><a href="form_layouts.html"> Form Layouts</a></li>
-                    <li><a href="form_advanced_components.html"> Advanced Components</a></li>
-                    <li><a href="form_wizard.html"> Form Wizards</a></li>
-                    <li><a href="form_validation.html"> Form Validation</a></li>
-                    <li><a href="editors.html"> Editors</a></li>
-                    <li><a href="inline_editors.html"> Inline Editors</a></li>
-                    <li><a href="pickers.html"> Pickers</a></li>
-                    <li><a href="dropzone.html"> Dropzone</a></li>
+                    <li><a href="#" class="masOwner2">Crear</a></li>
+                    <li><a href="/admin/owners">Listado</a></li>
                 </ul>
             </li>
-            <li class="menu-list"><a href=""><i class="fa fa-bar-chart-o"></i> <span>Charts</span></a>
+            <li class="menu-list"><a href=""><i class="fa fa-money"></i> <span>Solicitantes</span></a>
                 <ul class="sub-menu-list">
-                    <li><a href="flot_chart.html"> Flot Charts</a></li>
-                    <li><a href="morris.html"> Morris Charts</a></li>
-                    <li><a href="chartjs.html"> Chartjs</a></li>
-                    <li><a href="c3chart.html"> C3 Charts</a></li>
+                    <li><a href="#" class="masRequester2">Crear</a></li>
+                    <li><a href="/admin/requesters">Listado</a></li>
                 </ul>
             </li>
-            <li class="menu-list"><a href="#"><i class="fa fa-th-list"></i> <span>Data Tables</span></a>
+            <li class="menu-list"><a href=""><i class="fa fa-street-view"></i> <span>Sitios</span></a>
                 <ul class="sub-menu-list">
-                    <li><a href="basic_table.html"> Basic Table</a></li>
-                    <li><a href="dynamic_table.html"> Advanced Table</a></li>
-                    <li><a href="responsive_table.html"> Responsive Table</a></li>
-                    <li><a href="editable_table.html"> Edit Table</a></li>
-                </ul>
-            </li>
-
-            <li class="menu-list"><a href="#"><i class="fa fa-map-marker"></i> <span>Maps</span></a>
-                <ul class="sub-menu-list">
-                    <li><a href="google_map.html"> Google Map</a></li>
-                    <li><a href="vector_map.html"> Vector Map</a></li>
-                </ul>
-            </li>
-            <li class="menu-list"><a href=""><i class="fa fa-file-text"></i> <span>Extra Pages</span></a>
-                <ul class="sub-menu-list">
-                    <li><a href="profile.html"> Profile</a></li>
-                    <li><a href="invoice.html"> Invoice</a></li>
-                    <li><a href="pricing_table.html"> Pricing Table</a></li>
-                    <li><a href="timeline.html"> Timeline</a></li>
-                    <li><a href="blog_list.html"> Blog List</a></li>
-                    <li><a href="blog_details.html"> Blog Details</a></li>
-                    <li><a href="directory.html"> Directory </a></li>
-                    <li><a href="chat.html"> Chat </a></li>
-                    <li><a href="404.html"> 404 Error</a></li>
-                    <li><a href="500.html"> 500 Error</a></li>
-                    <li><a href="registration.html"> Registration Page</a></li>
-                    <li><a href="lock_screen.html"> Lockscreen </a></li>
+                    <li><a href="#" class="masSite2">Crear</a></li>
+                    <li><a href="/admin/sites">Listado</a></li>
                 </ul>
             </li>
             <li><a href="login.html"><i class="fa fa-sign-in"></i> <span>Login Page</span></a></li>

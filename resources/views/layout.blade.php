@@ -54,6 +54,9 @@
 <script src="/js/JScontrollers/cars.js"></script>
 <script src="/js/JScontrollers/groups.js"></script>
 <script src="/js/JScontrollers/indicators.js"></script>
+<script src="/js/JScontrollers/owners.js"></script>
+<script src="/js/JScontrollers/requesters.js"></script>
+<script src="/js/JScontrollers/sites.js"></script>
 
 <!--common scripts for all pages-->
 <script src="{{ url('/js/scripts.js') }}"></script>
@@ -67,5 +70,8 @@
 @include('admin.cars.crearCar')
 @include('admin.groups.crear')
 @include('admin.indicators.crear')
+@include('admin.owners.crear')
+@include('admin.requesters.crear')
+@include('admin.sites.crear')
 </body>
 </html>

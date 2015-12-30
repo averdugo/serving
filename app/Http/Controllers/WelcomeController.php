@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Owner;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -30,8 +32,8 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-
-		return view('home');
+		$owners = Owner::all();
+		return view('home',compact('owners'));
 	}
 
 }

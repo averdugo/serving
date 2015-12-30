@@ -143,5 +143,94 @@ $(document).ready(function(){
         deleteIndicator(id);
     })
     /*Indicator CRUD*/
+    /**/
+    /*Owner CRUD*/
+    $('body').on('click','.crearOwner',function(e){
+        e.preventDefault();
+        addOwner();
+    })
+    $('body').on('click','.masOwner',function(){
+        swown = false;
+        $('#crearOwner').modal();
+    })
+
+    $('body').on('click','.masOwner2',function(){
+        swown = true;
+        $('#crearOwner').modal();
+    })
+    $('body').on('click','.editOwner',function(){
+        var id = $(this).data('id');
+        getOwner(id)
+
+    })
+    $('body').on('click','.editarOwner',function(e){
+        e.preventDefault();
+        editOwner();
+    })
+    $('body').on('click','.deleteOwner',function(e){
+        var id = $(this).data('id');
+        deleteOwner(id);
+    })
+    /*Owner CRUD*/
+    /**/
+    /*Requester CRUD*/
+    $('body').on('click','.crearRequester',function(e){
+        e.preventDefault();
+        addRequester();
+    })
+    $('body').on('click','.masRequester',function(){
+        swreq = false;
+        $('#crearRequester').modal();
+    })
+
+    $('body').on('click','.masRequester2',function(){
+        swreq = true;
+        $('#crearRequester').modal();
+    })
+    $('body').on('click','.editRequester',function(){
+        var id = $(this).data('id');
+        getRequester(id)
+
+    })
+    $('body').on('click','.editarRequester',function(e){
+        e.preventDefault();
+        editRequester();
+    })
+    $('body').on('click','.deleteRequester',function(e){
+        var id = $(this).data('id');
+        deleteRequester(id);
+    })
+    /*Requester CRUD*/
+    /**/
+    /*Site CRUD*/
+    $('body').on('click','.crearSite',function(e){
+        e.preventDefault();
+        addSite();
+    })
+    $('body').on('click','.masSite',function(){
+        swsite = false;
+        getOwnerOptions(swsite);
+        $('#crearSite').modal();
+    })
+
+    $('body').on('click','.masSite2',function(){
+        swsite = true;
+        getOwnerOptions(swsite);
+        $('#crearSite').modal();
+    })
+    $('body').on('click','.editSite',function(){
+        var id = $(this).data('id');
+        getSite(id)
+
+    })
+    $('body').on('click','.editarSite',function(e){
+        e.preventDefault();
+        editSite();
+    })
+    $('body').on('click','.deleteSite',function(e){
+        var id = $(this).data('id');
+        deleteSite(id);
+    })
+    /*Site CRUD*/
 
 })
