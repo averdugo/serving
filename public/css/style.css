@@ -7,7 +7,7 @@ Author: ThemeBucket
 @import url('bootstrap.min.css');
 @import url('bootstrap-reset.css');
 @import url('jquery-ui-1.10.3.css');
-@import url('../fonts/css/font-awesome.min.css');
+@import url('font-awesome.min.css');
 @import url('custom-ico-fonts.css');
 
 body {

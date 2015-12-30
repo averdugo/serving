@@ -52,6 +52,7 @@
 <script src="/js/JScontrollers/users.js"></script>
 <script src="/js/JScontrollers/allowances.js"></script>
 <script src="/js/JScontrollers/cars.js"></script>
+<script src="/js/JScontrollers/groups.js"></script>
 
 <!--common scripts for all pages-->
 <script src="{{ url('/js/scripts.js') }}"></script>
@@ -65,5 +66,6 @@
 @include('admin.users.crearUsuario')
 @include('admin.allowances.crearAllowance')
 @include('admin.cars.crearCar')
+@include('admin.groups.crear')
 </body>
 </html>

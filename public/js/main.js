@@ -85,4 +85,33 @@ $(document).ready(function(){
         deleteCar(id);
     })
     /*Cars CRUD*/
+    /**/
+    /*Group CRUD*/
+    $('body').on('click','.crearGroup',function(e){
+        e.preventDefault();
+        addGroup();
+    })
+    $('body').on('click','.masGroup',function(){
+        swcar = false;
+        $('#crearGroup').modal();
+    })
+
+    $('body').on('click','.masGroup2',function(){
+        swcar = true;
+        $('#crearGroup').modal();
+    })
+    $('body').on('click','.editGroup',function(){
+        var id = $(this).data('id');
+        getGroup(id)
+
+    })
+    $('body').on('click','.editarGroup',function(e){
+        e.preventDefault();
+        editGroup();
+    })
+    $('body').on('click','.deleteGroup',function(e){
+        var id = $(this).data('id');
+        deleteGroup(id);
+    })
+    /*Group CRUD*/
 })

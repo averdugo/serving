@@ -42,32 +42,29 @@
                 </ul>
             </li>
 
-            <li class="menu-list"><a href=""><i class="fa fa-laptop"></i> <span>Usuarios</span></a>
+            <li class="menu-list"><a href=""><i class="fa fa-user"></i> <span>Usuarios</span></a>
                 <ul class="sub-menu-list">
                     <li><a href="#" class="masUser2">Crear</a></li>
-                    <li><a href="admin/users">Listado</a></li>
+                    <li><a href="/admin/users">Listado</a></li>
                 </ul>
             </li>
-            <li class="menu-list"><a href=""><i class="fa fa-laptop"></i> <span>Viaticos</span></a>
+            <li class="menu-list"><a href=""><i class="fa  fa-credit-card"></i> <span>Viaticos</span></a>
                 <ul class="sub-menu-list">
                     <li><a href="#" class="masAllowance2">Crear</a></li>
-                    <li><a href="admin/allowances">Listado</a></li>
+                    <li><a href="/admin/allowances">Listado</a></li>
                 </ul>
             </li>
-            <li class="menu-list"><a href=""><i class="fa fa-cogs"></i> <span>Autos</span></a>
+            <li class="menu-list"><a href=""><i class="fa fa-car"></i> <span>Autos</span></a>
                 <ul class="sub-menu-list">
                     <li><a href="#" class="masCar2">Crear</a></li>
-                    <li><a href="admin/cars">Listado</a></li>
+                    <li><a href="/admin/cars">Listado</a></li>
                 </ul>
             </li>
 
-            <li><a href="fontawesome.html"><i class="fa fa-bullhorn"></i> <span>Fontawesome</span></a></li>
-
-            <li class="menu-list"><a href=""><i class="fa fa-envelope"></i> <span>Mail</span></a>
+            <li class="menu-list"><a href=""><i class="fa fa-users"></i> <span>Grupos</span></a>
                 <ul class="sub-menu-list">
-                    <li><a href="mail.html"> Inbox</a></li>
-                    <li><a href="mail_compose.html"> Compose Mail</a></li>
-                    <li><a href="mail_view.html"> View Mail</a></li>
+                    <li><a href="#" class="masGroup2">Crear</a></li>
+                    <li><a href="/admin/groups">Listado</a></li>
                 </ul>
             </li>
 
