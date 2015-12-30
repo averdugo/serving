@@ -7,7 +7,7 @@
                 <h4 class="modal-title" id="myModalLabel">Crear Usuario</h4>
             </div>
             <div class="modal-body">
-                {!! Form::open(['route'=>'admin.users.store','method'=>'POST']) !!}
+                {!! Form::open(['route'=>'admin.users.store','method'=>'POST','id'=>'crearUsuarioForm']) !!}
                     <div class="form-group">
                         {!! Form::label('name', 'Nombre') !!}
                         {!! Form::text('name',null, ['class'=>'form-control', 'placeholder'=>'Nombre']) !!}
@@ -46,12 +46,13 @@
                             '3' => 'BCH'
                         ),null,['class'=>'form-control']) !!}
                     </div>
+                {!! Form::close() !!}
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="button" class="btn btn-primary crearUsuario">Guardar</button>
             </div>
-            {!! Form::close() !!}
+
         </div>
     </div>
 </div>

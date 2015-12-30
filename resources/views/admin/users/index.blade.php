@@ -19,7 +19,7 @@
                     <!-- page heading start-->
                     <div class="page-heading">
                         <h3>
-                            Usuarios <button class="btn btn-default pull-right">+</button>
+                            Usuarios <button class="btn btn-default pull-right masUser" data-set="2">+</button>
                         </h3>
                         <ul class="breadcrumb">
                             <li>
@@ -60,7 +60,7 @@
                     <div class="directory-info-row">
                         <div class="row">
                             @foreach($users as $user)
-                                <div class="col-md-6 col-sm-6">
+                                <div id="user{{$user->id}}" class="col-md-6 col-sm-6">
                                     <div class="panel">
                                         <div class="panel-body">
                                             <h4>
@@ -69,19 +69,16 @@
                                                     {{ $user->user_type_id }}
                                                 </span>
                                                 <span class="pull-right">
-                                                    <button class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></button>
-                                                    <button class="btn btn-default"><i class="glyphicon glyphicon-remove"></i></button>
+                                                    <button class="btn btn-default editUser" data-id="{{$user->id}}" ><i class="glyphicon glyphicon-pencil"></i></button>
+                                                    <button class="btn btn-default deleteUser" data-id="{{$user->id}}" ><i class="glyphicon glyphicon-remove"></i></button>
                                                 </span>
                                             </h4>
                                             <div class="media">
-                                                <a class="pull-left" href="#">
-                                                    <img class="thumb media-object" src="/images/photos/user1.png" alt="">
-                                                </a>
                                                 <div class="media-body">
                                                     <address>
                                                         <strong>{{$user->address}}</strong><br>
                                                         <a href="mailto:{{$user->email}}">{{$user->email}}</a><br>
-                                                        {{$user->group_id}}
+                                                        <p>{{$user->group_id}}</p>
                                                         <abbr title="Phone">T:</abbr><a href="tel:{{$user->phone}}">{{$user->phone}}</a>
                                                     </address>
                                                 </div>
@@ -98,5 +95,12 @@
             </div>
             <!-- main content end-->
         </section>
-
+        {!! Form::open (['route'=>['admin.users.destroy', ':USER_ID'],'method'=>'DELETE', 'id'=>'deleteForm']) !!}
+        {!! Form::close() !!}
+@endsection
+@section('modales')
+    @include('modales/editarUsuario')
+@endsection
+@section('JScontrollers')
+    <script src="/js/JScontrollers/users.js"></script>
 @endsection

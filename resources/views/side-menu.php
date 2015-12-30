@@ -3,7 +3,7 @@
 
     <!--logo and iconic logo start-->
     <div class="logo">
-        <a href="home"><img src="/images/logo.gif" alt="" style="width: 100%;margin-left: -20px;"></a>
+        <a href="/home"><img src="/images/logo.gif" alt="" style="width: 100%;margin-left: -20px;"></a>
     </div>
 
     <div class="logo-icon text-center">
@@ -33,7 +33,7 @@
 
         <!--sidebar nav start-->
         <ul class="nav nav-pills nav-stacked custom-nav">
-            <li class="menu-list nav-active"><a href="index.html"><i class="fa fa-home"></i> <span>Dashboard</span></a>
+            <li class="menu-list nav-active"><a href="/home"><i class="fa fa-home"></i> <span>Inicio</span></a>
                 <ul class="sub-menu-list">
                     <li><a href="index_alt.html">Gantt DT</a></li>
                     <li ><a href="index.html">Gantt ASR</a></li>
@@ -46,8 +46,8 @@
 
             <li class="menu-list"><a href=""><i class="fa fa-laptop"></i> <span>Usuarios</span></a>
                 <ul class="sub-menu-list">
-                    <li><a href="#" data-toggle="modal" data-target="#crearUsuario">Crear</a></li>
-                    <li><a href="boxed_view.html">Listado</a></li>
+                    <li><a href="#" class="masUser2">Crear</a></li>
+                    <li><a href="admin/users">Listado</a></li>
                 </ul>
             </li>
             <li class="menu-list"><a href=""><i class="fa fa-book"></i> <span>UI Elements</span></a>

@@ -1,12 +1,12 @@
-<?php namespace App\Http\Controllers\Admin;
+<?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\User;
-use Illuminate\Support\Facades\Request;
 
+use Illuminate\Http\Request;
+use App\Allowance;
 
-class UsersController extends Controller {
+class AllowanceController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,9 +15,17 @@ class UsersController extends Controller {
 	 */
 	public function index()
 	{
-		$users = User::paginate();
-		return view('admin.users.index',compact('users'));
+		//
+	}
 
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
+	public function create()
+	{
+		//
 	}
 
 	/**
@@ -27,9 +35,7 @@ class UsersController extends Controller {
 	 */
 	public function store()
 	{
-        $user = new User(Request::all());
-        $user->save();
-		return $user;
+		//
 	}
 
 	/**
@@ -40,7 +46,7 @@ class UsersController extends Controller {
 	 */
 	public function show($id)
 	{
-
+		//
 	}
 
 	/**
@@ -51,8 +57,7 @@ class UsersController extends Controller {
 	 */
 	public function edit($id)
 	{
-		$user = User::findOrFail($id);
-		return $user;
+		//
 	}
 
 	/**
@@ -63,9 +68,7 @@ class UsersController extends Controller {
 	 */
 	public function update($id)
 	{
-		$user = User::findOrFail($id);
-		$user->fill(Request::all());
-		$user->save();
+		//
 	}
 
 	/**
@@ -76,10 +79,7 @@ class UsersController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		$user = User::findOrFail($id);
-		$user->delete();
-
-		return $id;
+		//
 	}
 
 }

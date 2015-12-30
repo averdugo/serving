@@ -32,7 +32,6 @@
 
 @yield('content')
 
-@include('modales/crearUsuario')
 
 <!-- Placed js at the end of the document so the pages load faster -->
 <script src="{{ url('/js/jquery-1.10.2.min.js') }}"></script>
@@ -54,7 +53,13 @@
 
 <!--common scripts for all pages-->
 <script src="{{ url('/js/scripts.js') }}"></script>
+<script src="{{ url('/js/main.js') }}"></script>
+<script src="/js/jquery.serialize-object.min.js"></script>
 
+@yield('modales')
 
+@yield('JScontrollers')
+
+@include('modales/crearUsuario')
 </body>
 </html>
