@@ -48,11 +48,12 @@
 <script src="/js/dynamic_table_init.js"></script>
 
 
-<!--Controllers-->
+<!--JSControllers-->
 <script src="/js/JScontrollers/users.js"></script>
 <script src="/js/JScontrollers/allowances.js"></script>
 <script src="/js/JScontrollers/cars.js"></script>
 <script src="/js/JScontrollers/groups.js"></script>
+<script src="/js/JScontrollers/indicators.js"></script>
 
 <!--common scripts for all pages-->
 <script src="{{ url('/js/scripts.js') }}"></script>
@@ -61,11 +62,10 @@
 
 @yield('modales')
 
-
-
 @include('admin.users.crearUsuario')
 @include('admin.allowances.crearAllowance')
 @include('admin.cars.crearCar')
 @include('admin.groups.crear')
+@include('admin.indicators.crear')
 </body>
 </html>

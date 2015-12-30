@@ -67,6 +67,12 @@
                     <li><a href="/admin/groups">Listado</a></li>
                 </ul>
             </li>
+            <li class="menu-list"><a href=""><i class="fa fa-bar-chart"></i> <span>Indicadores</span></a>
+                <ul class="sub-menu-list">
+                    <li><a href="#" class="masIndicator2">Crear</a></li>
+                    <li><a href="/admin/indicators">Listado</a></li>
+                </ul>
+            </li>
 
             <li class="menu-list"><a href=""><i class="fa fa-tasks"></i> <span>Forms</span></a>
                 <ul class="sub-menu-list">

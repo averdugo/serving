@@ -114,4 +114,34 @@ $(document).ready(function(){
         deleteGroup(id);
     })
     /*Group CRUD*/
+    /**/
+    /*Indicator CRUD*/
+    $('body').on('click','.crearIndicator',function(e){
+        e.preventDefault();
+        addIndicator();
+    })
+    $('body').on('click','.masIndicator',function(){
+        swind = false;
+        $('#crearIndicator').modal();
+    })
+
+    $('body').on('click','.masIndicator2',function(){
+        swind = true;
+        $('#crearIndicator').modal();
+    })
+    $('body').on('click','.editIndicator',function(){
+        var id = $(this).data('id');
+        getIndicator(id)
+
+    })
+    $('body').on('click','.editarIndicator',function(e){
+        e.preventDefault();
+        editIndicator();
+    })
+    $('body').on('click','.deleteIndicator',function(e){
+        var id = $(this).data('id');
+        deleteIndicator(id);
+    })
+    /*Indicator CRUD*/
+
 })

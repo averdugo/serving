@@ -3,10 +3,10 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Group;
+use App\Indicator;
 use Illuminate\Support\Facades\Request;
 
-class GroupController extends Controller {
+class IndicatorController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,10 +15,10 @@ class GroupController extends Controller {
 	 */
 	public function index()
 	{
-
-		$groups = Group::paginate();
-		return view('admin.groups.index',compact('groups'));
+		$indicators = Indicator::paginate();
+		return view('admin.indicators.index',compact('indicators'));
 	}
+
 
 	/**
 	 * Store a newly created resource in storage.
@@ -27,9 +27,9 @@ class GroupController extends Controller {
 	 */
 	public function store()
 	{
-		$group = new Group(Request::all());
-		$group->save();
-		return $group;
+		$indicator = new Indicator(Request::all());
+		$indicator->save();
+		return $indicator;
 	}
 
 	/**
@@ -51,8 +51,8 @@ class GroupController extends Controller {
 	 */
 	public function edit($id)
 	{
-		$group = Group::findOrFail($id);
-		return $group;
+		$indicator = Indicator::findOrFail($id);
+		return $indicator;
 	}
 
 	/**
@@ -63,9 +63,9 @@ class GroupController extends Controller {
 	 */
 	public function update($id)
 	{
-		$group = Group::findOrFail($id);
-		$group->fill(Request::all());
-		$group->save();
+		$indicator = Indicator::findOrFail($id);
+		$indicator->fill(Request::all());
+		$indicator->save();
 	}
 
 	/**
@@ -76,9 +76,10 @@ class GroupController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		$group = Group::findOrFail($id);
-		$group->delete();
+		$indicator = Indicator::findOrFail($id);
+		$indicator->delete();
 		return $id;
+
 	}
 
 }
