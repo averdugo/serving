@@ -18,6 +18,27 @@ class AllowanceController extends Controller {
         $allowances = Allowance::paginate();
         return view('admin.allowances.index',compact('allowances'));
 	}
+	public function listA()
+	{
+		$allowances = Allowance::all();
+		$data = "";
+
+		foreach($allowances as $a){
+			$data .= sprintf('
+				<tr>
+					<td>
+						<p>Region: %s</p>
+						<p>Lugar: %s</p>
+					</td>
+					<td>%s</td>
+					<td>%s</td>
+					<td><button class="btn btn-default setAllowance" data-id="%s" >Ok</button></td>
+				</tr>
+			',$a->region,$a->place,$a->value,$a->fondo,$a->id);
+		};
+
+		return $data;
+	}
 
 	/**
 	 * Store a newly created resource in storage.

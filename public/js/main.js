@@ -13,6 +13,16 @@ $(document).ready(function(){
         swuser = true;
         $('#crearUsuario').modal();
     })
+
+    $('select.userSelect').change(function(){
+        var id = $(this).val();
+        if(id == 1 || id == 2 ||id == 3 ){
+            getGroupsOptions(id)
+        }else{
+            $('.groupUserDivSelect').fadeOut();
+        }
+    })
+
     $('body').on('click','.editUser',function(){
         var id = $(this).data('id');
         getUser(id)

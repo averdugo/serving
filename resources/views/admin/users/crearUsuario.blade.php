@@ -32,19 +32,18 @@
                         {!! Form::label('type', 'Selecciona Tipo de Usuario') !!}
                         {!! Form::select('user_type_id', array(
                             '' => 'Seleccione',
-                            '1' => 'Admin',
-                            '2' => 'Ots',
-                            '3' => 'Chofer'
-                        ),null,['class'=>'form-control']) !!}
-                    </div>
-                    <div class="form-group">
-                        {!! Form::label('group', 'Selecciona Grupo') !!}
-                        {!! Form::select('group_id', array(
-                            '' => 'Seleccione',
                             '1' => 'DT',
                             '2' => 'ASR',
-                            '3' => 'BCH'
-                        ),null,['class'=>'form-control']) !!}
+                            '3' => 'BCH',
+                            '4' => 'Chofer',
+                            '5' => 'Admin'
+                        ),null,['class'=>'form-control userSelect']) !!}
+                    </div>
+                    <div class="form-group groupUserDivSelect" style="display:none">
+                        {!! Form::label('group', 'Selecciona Grupo') !!}
+                        {!! Form::select('group_id', array(
+                            '' => 'Seleccione'),
+                            null,['class'=>'form-control userGroup']) !!}
                     </div>
                 {!! Form::close() !!}
             </div>

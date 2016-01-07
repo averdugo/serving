@@ -33,12 +33,10 @@
         <ul class="nav nav-pills nav-stacked custom-nav">
             <li class="menu-list"><a href="/home"><i class="fa fa-home"></i> <span>Inicio</span></a>
                 <ul class="sub-menu-list">
-                    <li><a href="index_alt.html">Gantt DT</a></li>
-                    <li ><a href="index.html">Gantt ASR</a></li>
-                    <li ><a href="index.html">Gantt BCH</a></li>
-                    <li ><a href="index.html">OT's</a></li>
-                    <li ><a href="index.html">KPI</a></li>
-
+                    <li><a href="#">Gantt</a></li>
+                    <li ><a href="#">OT's</a></li>
+                    <li ><a href="#">KPI</a></li>
+                    <li><a href="#">Documentos</a></li>
                 </ul>
             </li>
 
@@ -91,7 +89,7 @@
                     <li><a href="/admin/sites">Listado</a></li>
                 </ul>
             </li>
-            <li><a href="login.html"><i class="fa fa-sign-in"></i> <span>Login Page</span></a></li>
+            <li><a href="{{ url('/auth/logout') }}"><i class="fa fa-sign-in"></i> <span>Login Page</span></a></li>
 
         </ul>
         <!--sidebar nav end-->

@@ -1,0 +1,13 @@
+<option value="0">Seleccione</option>
+<option value="1">Atencion de Reclamos</option>
+<option value="2">Benchmarking</option>
+<option value="3">Interferencia</option>
+<option value="4">Medicion Outdoor</option>
+<option value="5">Medicion Indoor</option>
+<option value="6">Medicion Indoor Mensual</option>
+<option value="7">Medicion Indoor Periodica</option>
+<option value="8">Medicion Outdoor Periodica</option>
+<option value="9">Prueba Estacionaria</option>
+<option value="10">Reclamo</option>
+<option value="11">Rutas Principales</option>
+<option value="12">Walk Test</option>

@@ -1,0 +1,16 @@
+<option value="0">Seleccione</option>
+<option value="13">RM</option>
+<option value="1">Tarapacá</option>
+<option value="2">Antofagasta</option>
+<option value="3">Atacama</option>
+<option value="4">Coquimbo</option>
+<option value="5">Valparaíso</option>
+<option value="6">Bernardo O'Higgins</option>
+<option value="7">Maule</option>
+<option value="8">Bío Bío</option>
+<option value="9">Araucanía</option>
+<option value="10">de los Lagos</option>
+<option value="11">Aisén</option>
+<option value="12">Magallanes</option>
+<option value="14">de los Ríos</option>
+<option value="15">Arica y Parinacota</option>

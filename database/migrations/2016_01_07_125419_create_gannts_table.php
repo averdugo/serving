@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnsToOwnersTable extends Migration {
+class CreateGanntsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,10 @@ class AddColumnsToOwnersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('owners', function(Blueprint $table)
+		Schema::create('gannts', function(Blueprint $table)
 		{
-			$table->string('contact');
-			$table->string('phone');
+			$table->increments('id');
+			$table->timestamps();
 		});
 	}
 
@@ -26,10 +26,7 @@ class AddColumnsToOwnersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('owners', function(Blueprint $table)
-		{
-			//
-		});
+		Schema::drop('gannts');
 	}
 
 }

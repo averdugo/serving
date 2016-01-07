@@ -296,10 +296,22 @@ hr {
     border-radius: 0;
     -webkit-border-radius: 0;
 }
-
+.custom-nav2 > li > a {
+    color: black;
+    padding: 12px 20px;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+}
 .custom-nav > li > a:hover,
 .custom-nav > li > a:active {
     background-color: #353f4f;
+    color: #65cea7;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+}
+.custom-nav2 > li > a:hover,
+.custom-nav2 > li > a:active {
+
     color: #65cea7;
     border-radius: 0;
     -webkit-border-radius: 0;
@@ -313,12 +325,22 @@ hr {
     background-color: #353f4f;
     background-image: url(../images/plus.png);
 }
+.custom-nav2 > li.menu-list > a:hover {
+    background-color: transparent;
+    background-image: url(../images/plus.png);
+}
 
 .custom-nav > li.nav-active > a {
     background-color: #353f4f;
     background-image: url(../images/minus.png);
     color: #65cea7;
 }
+.custom-nav2 > li.nav-active > a {
+    background-color: transparent;
+    background-image: url(../images/minus.png);
+    color: #999;
+}
+
 
 .custom-nav > li.nav-active > ul{
     display: block;
@@ -332,6 +354,12 @@ hr {
 .custom-nav > li.active > a:hover,
 .custom-nav > li.active > a:focus {
     background-color: #353f4f;
+    color: #65cea7;
+}
+.custom-nav2 > li.active > a,
+.custom-nav2 > li.active > a:hover,
+.custom-nav2 > li.active > a:focus {
+    background-color: transparent;
     color: #65cea7;
 }
 
@@ -362,9 +390,26 @@ hr {
     padding: 0;
     background: #353f4f;
 }
+.custom-nav2 .sub-menu-list {
+    list-style: none;
+    display: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
 
 .custom-nav .sub-menu-list > li > a {
     color: #fff;
+    font-size: 13px;
+    display: block;
+    padding: 10px 5px 10px 50px;
+    -moz-transition: all 0.2s ease-out 0s;
+    -webkit-transition: all 0.2s ease-out 0s;
+    transition: all 0.2s ease-out 0s;
+}
+.custom-nav2 .sub-menu-list > li > a {
+    color: #000;
     font-size: 13px;
     display: block;
     padding: 10px 5px 10px 50px;
@@ -379,6 +424,13 @@ hr {
     text-decoration: none;
     color: #65cea7;
     background: #2a323f;
+}
+.custom-nav2 .sub-menu-list > li > a:hover,
+.custom-nav2 .sub-menu-list > li > a:active,
+.custom-nav2 .sub-menu-list > li > a:focus {
+    text-decoration: none;
+    color: #999;
+    background: transparent;
 }
 
 .custom-nav .sub-menu-list > li .fa {

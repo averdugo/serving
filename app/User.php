@@ -31,6 +31,20 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+
+	protected $typeses = array(
+		1 => 'DT',
+		2 => 'ASR',
+		3 => 'BCH',
+		4 => 'Chofer',
+		5 => 'Admin'
+	);
+
+	public function getTypesTextAttribute()
+	{
+		return self::$typeses[$this->status];
+	}
+
 	public function setPasswordAttribute($value)
 	{
 		if(! empty ($value))

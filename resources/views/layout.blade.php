@@ -15,6 +15,8 @@
   <link href="/js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
   <link rel="stylesheet" href="/js/data-tables/DT_bootstrap.css" />
 
+@yield('dCss')
+
   <!--common-->
   <link href="{{ url('/css/style.css') }}" rel="stylesheet">
   <link href="{{ url('/css/style-responsive.css') }}" rel="stylesheet">
@@ -48,6 +50,7 @@
 <script src="/js/dynamic_table_init.js"></script>
 
 
+
 <!--JSControllers-->
 <script src="/js/JScontrollers/users.js"></script>
 <script src="/js/JScontrollers/allowances.js"></script>
@@ -63,7 +66,11 @@
 <script src="{{ url('/js/main.js') }}"></script>
 <script src="/js/jquery.serialize-object.min.js"></script>
 
+@yield('js-Extra')
+
 @yield('modales')
+
+@yield('script')
 
 @include('admin.users.crearUsuario')
 @include('admin.allowances.crearAllowance')
@@ -73,5 +80,6 @@
 @include('admin.owners.crear')
 @include('admin.requesters.crear')
 @include('admin.sites.crear')
+
 </body>
 </html>

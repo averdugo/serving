@@ -40,7 +40,14 @@ function editUser(){
         location.reload();
     });
 }
+function getGroupsOptions(id){
+    var url ="/admin/users/groupsOption/"+id;
+    $.get(url,function(result){
+        $('.groupUserDivSelect').fadeIn();
+        $('.userGroup').html(result);
 
+    });
+}
 function deleteUser(id){
 
     var form = $('#deleteForm').serializeObject();

@@ -26,8 +26,9 @@ var TreeView = function () {
             // INITIALIZING TREE
             var treeDataSource = new DataSourceTree({
                 data: [
-                    { name: 'Dashboard', type: 'folder', additionalParameters: { id: 'F1' } },
-                    { name: 'Elements', type: 'folder', additionalParameters: { id: 'F2' } },
+                    { name: 'DT', type: 'folder', additionalParameters: {  dataSource: 'treeDataSource4', } },
+                    { name: 'ASR', type: 'folder', additionalParameters: { id: 'F2' } },
+                    { name: 'ASR', type: 'folder', additionalParameters: { id: 'F2' } },
                     { name: 'View Category', type: 'item', additionalParameters: { id: 'I1' } },
                     { name: 'Testing', type: 'item', additionalParameters: { id: 'I2' } }
                 ],

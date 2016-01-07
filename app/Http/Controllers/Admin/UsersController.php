@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Group;
 use Illuminate\Support\Facades\Request;
 
 
@@ -42,7 +43,19 @@ class UsersController extends Controller {
 	{
 
 	}
+	public function groupsOption($type)
+	{
+		$groups = Group::ofType($type)->active()->get();
+		$data="<option value='0'>Seleccione</option>";
 
+		foreach($groups as $g){
+			$data .= sprintf('
+				<option value="%s">%s</option>
+			',$g->id,$g->name);
+		};
+
+		return $data;
+	}
 	/**
 	 * Show the form for editing the specified resource.
 	 *
