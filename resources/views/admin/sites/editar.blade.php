@@ -10,16 +10,49 @@
                 {!! Form::open(['route'=>'admin.sites.store','method'=>'PUT','id'=>'editarSiteForm']) !!}
                 {!! Form::hidden('id',null,['id'=>'idEditFormSite']) !!}
                 <div class="form-group">
-                    {!! Form::label('name', 'Nombre') !!}
-                    {!! Form::text('name',null, ['class'=>'form-control', 'placeholder'=>'Nombre','id'=>'nameEditFormSite']) !!}
+                    {!! Form::label('siteid', 'Id de Sitio') !!}
+                    {!! Form::number('siteid',null, ['class'=>'form-control', 'placeholder'=>'Nombre del Sitio','id'=>'siteidEditFormSite']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('nemonico', 'Nemonico') !!}
                     {!! Form::text('nemonico',null, ['class'=>'form-control', 'placeholder'=>'Nemonico','id'=>'nemonicoEditFormSite']) !!}
                 </div>
                 <div class="form-group">
+                    {!! Form::label('name', 'I') !!}
+                    {!! Form::text('name',null, ['class'=>'form-control', 'placeholder'=>'','id'=>'nameEditFormSite']) !!}
+
+                </div>
+                <div class="form-group">
                     {!! Form::label('address', 'Direccion') !!}
                     {!! Form::text('address',null, ['class'=>'form-control', 'placeholder'=>'Telefono','id'=>'addressEditFormSite']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('instance', 'Instancia') !!}
+                    {!! Form::number('instance',null, ['class'=>'form-control', 'placeholder'=>'Instancia','id'=>'instanceEditFormSite']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('tecnology', 'Tecnologia') !!}
+                    {!! Form::text('tecnology',null, ['class'=>'form-control', 'placeholder'=>'Tecnologia','id'=>'tecnologyEditFormSite']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('emplz', 'ID Emplz') !!}
+                    {!! Form::number('emplz',null, ['class'=>'form-control', 'placeholder'=>'','id'=>'emplzEditFormSite']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('comuna', 'Comuna') !!}
+                    {!! Form::text('comuna',null, ['class'=>'form-control', 'placeholder'=>'Comuna','id'=>'comunaEditFormSite']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('provincia', 'Provincia') !!}
+                    {!! Form::text('provincia',null, ['class'=>'form-control', 'placeholder'=>'Provincia','id'=>'provinciaEditFormSite']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('region', 'Region') !!}
+                    {!! Form::text('region',null, ['class'=>'form-control', 'placeholder'=>'Region','id'=>'regionEditFormSite']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('category', 'Categoria') !!}
+                    {!! Form::text('category',null, ['class'=>'form-control', 'placeholder'=>'Categoria','id'=>'categoryEditFormSite']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('owner_id', 'Selecciona Dueño') !!}

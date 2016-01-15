@@ -23,6 +23,14 @@ function getSite(id){
         $('#nameEditFormSite').val(result.name);
         $('#nemonicoEditFormSite').val(result.nemonico);
         $('#addressEditFormSite').val(result.address);
+        $('#siteidEditFormSite').val(result.siteid);
+        $('#instanceEditFormSite').val(result.instance);
+        $('#tecnologyEditFormSite').val(result.tecnology);
+        $('#emplzEditFormSite').val(result.emplz);
+        $('#comunaEditFormSite').val(result.comuna);
+        $('#provinciaEditFormSite').val(result.provincia);
+        $('#regionEditFormSite').val(result.region);
+        $('#categoryEditFormSite').val(result.category);
         $('#ownerEditFormSite option[value='+result.owner_id+']').attr('selected','selected');
         $('#editarSite').modal();
     });

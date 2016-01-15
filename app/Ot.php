@@ -24,14 +24,24 @@ class Ot extends Model {
         'status'
     ];
 
-    static $statuses = array(
+    static $statusesDt = array(
         0 => '',
         1 => 'Asignada Interferencia',
         2 => 'Cancelada',
         3 => 'Cerrada',
         4 => 'Espera',
-        5 => 'Espera ASR OT885',
-        6 => 'Planificado'
+        5 => 'Planificado'
+    );
+    static $statusesAsr = array(
+        0 => '',
+        1 => 'Cancelado',
+        2 => 'Cerrado',
+        3 => 'Ejecutado',
+        4 => 'Espera Confirmacion',
+        5 => 'Gestion Permiso',
+        6 => 'No Ejecutado',
+        7 => 'Planificado',
+        8 => 'Suspendido'
     );
     static $typeDt = array(
         0 => '',

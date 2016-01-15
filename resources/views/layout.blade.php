@@ -80,6 +80,8 @@
 @include('admin.owners.crear')
 @include('admin.requesters.crear')
 @include('admin.sites.crear')
+@include('modals.gantSelect')
+@include('modals.otSelect')
 
 </body>
 </html>

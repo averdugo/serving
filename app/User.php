@@ -22,7 +22,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'email', 'password', 'phone', 'address', 'user_type_id', 'group_id'];
+	protected $fillable = ['name', 'email', 'password', 'phone', 'address', 'user_type_id', 'group_id','subtype'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -38,6 +38,19 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		3 => 'BCH',
 		4 => 'Chofer',
 		5 => 'Admin'
+	);
+
+	static $subDtTypeses = array(
+		1 => 'Coordinador',
+		2 => 'Medidor',
+		3 => 'Ingeniero Reporte'
+	);
+
+	static $subAsrTypeses = array(
+		1 => 'Coordinador',
+		2 => 'Jefe de Grupo',
+		3 => 'Técnico',
+		4 => 'Ayudante'
 	);
 
 	public function getTypesTextAttribute()

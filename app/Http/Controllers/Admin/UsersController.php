@@ -45,6 +45,17 @@ class UsersController extends Controller {
 	}
 	public function groupsOption($type)
 	{
+		if($type == 1){
+			$sub = User::$subDtTypeses;
+		}elseif($type == 2){
+			$sub = User::$subAsrTypeses;
+		}
+
+		$subSelect = "";
+		foreach($sub as $key => $value):
+			$subSelect .= '<option value="'.$key.'">'.$value.'</option>'; //close your tags!!
+		endforeach;
+
 		$groups = Group::ofType($type)->active()->get();
 		$data="<option value='0'>Seleccione</option>";
 
@@ -54,7 +65,7 @@ class UsersController extends Controller {
 			',$g->id,$g->name);
 		};
 
-		return $data;
+		return json_encode(array($data, $subSelect));
 	}
 	/**
 	 * Show the form for editing the specified resource.

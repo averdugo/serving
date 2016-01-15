@@ -168,7 +168,7 @@
                                                         <div class="col-md-6 col-sm-6">
                                                             <select name="user_id" id="" class="form-control">
                                                                 <option value="0">Seleccione</option>
-                                                                @foreach ($uDts as $ud)
+                                                                @foreach ($uReport as $ud)
                                                                     <option value="{{$ud->id}}">{{$ud->name}}</option>
                                                                 @endforeach
                                                             </select>

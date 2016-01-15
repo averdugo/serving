@@ -64,4 +64,26 @@ $(function() {
         format: 'yyyy-mm-dd'
     });
 
+    $('#country_name').autocomplete({
+        source: function( request, response ) {
+            $.ajax({
+                url : '/admin/sites/nemonico',
+                dataType: "json",
+                data: {
+                    name_startsWith: request.term
+                },
+                success: function( data ) {
+                    response( $.map( data, function( item, i ) {
+                        return {
+                            label: data[i].nemonico,
+                            value: data[i].nemonico
+                        }
+                    }));
+                }
+            });
+        },
+        autoFocus: true,
+        minLength: 0
+    });
+
 });

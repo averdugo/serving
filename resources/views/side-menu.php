@@ -33,8 +33,8 @@
         <ul class="nav nav-pills nav-stacked custom-nav">
             <li class="menu-list"><a href="/home"><i class="fa fa-home"></i> <span>Inicio</span></a>
                 <ul class="sub-menu-list">
-                    <li><a href="#">Gantt</a></li>
-                    <li ><a href="#">OT's</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#gantSelect">Gantt</a></li>
+                    <li ><a href="#"  data-toggle="modal" data-target="#otSelect">OT's</a></li>
                     <li ><a href="#">KPI</a></li>
                     <li><a href="#">Documentos</a></li>
                 </ul>

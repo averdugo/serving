@@ -39,12 +39,19 @@
                             '5' => 'Admin'
                         ),null,['class'=>'form-control userSelect']) !!}
                     </div>
+                    <div class="form-group subTypeUserDivSelect" style="display:none">
+                        {!! Form::label('group', 'Selecciona Sub Categoria') !!}
+                        {!! Form::select('subtype', array(
+                            '' => 'Seleccione'),
+                            null,['class'=>'form-control userSubType']) !!}
+                    </div>
                     <div class="form-group groupUserDivSelect" style="display:none">
                         {!! Form::label('group', 'Selecciona Grupo') !!}
                         {!! Form::select('group_id', array(
                             '' => 'Seleccione'),
                             null,['class'=>'form-control userGroup']) !!}
                     </div>
+
                 {!! Form::close() !!}
             </div>
             <div class="modal-footer">

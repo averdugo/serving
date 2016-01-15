@@ -55,6 +55,19 @@ class SiteController extends Controller {
 		$sites = Site::findOrFail($id);
 		return $sites;
 	}
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function nemonico()
+	{
+		$req = Request::all();
+		$o = $req['name_startsWith'];
+		$data = Site::where('nemonico','LIKE','%'.$o.'%')->get();
+		return $data;
+	}
 
 	/**
 	 * Update the specified resource in storage.

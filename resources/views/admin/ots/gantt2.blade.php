@@ -8,7 +8,7 @@
 
 @section('body-class')
     <body class="sticky-header left-side-collapsed">
-@stop
+    @stop
 
     @section('content')
         <section>
@@ -26,7 +26,7 @@
                         <div class="col-sm-12">
                             <section class="panel" style="height: 500px;">
                                 <header class="panel-heading">
-                                    Gantt DT
+                                    Gantt Asr
                                 </header>
                                 <div class="" style="height: 500px;">
                                     <input value="Exportar a PDF" type="button" onclick='gantt.exportToPDF()' class="btn btn-success" style='margin:20px;'>
@@ -62,27 +62,27 @@
         <script>
             $(document).ready(function(){
                 function getData(){
-                   var url ="/admin/ots/data/1";
-                   $.get(url,function(result){
+                    var url ="/admin/ots/data/2";
+
+                    $.get(url,function(result){
+
                         var gnats = $.map(result, function(a, i) {
-                            return {
-                                id: result[i].id,
-                                name:result[i].original_ot,
-                                text: result[i].description,
-                                group: result[i].group_id,
-                                start_date: result[i].start_at,
-                                duration:"1",
-                                open:true
-                            };
+                            return {id: result[i].id,name:result[i].original_ot, text: result[i].description, group: result[i].group_id, start_date: result[i].start_at, duration:"1",open:true};
                         });
+
+                        console.log(gnats);
                         var demo_tasks = {
                             "data":gnats
                         };
+                        console.log(demo_tasks);
                         gantt.parse(demo_tasks);
-                   });
+
+
+                    });
                 }
+
                 getData();
             });
         </script>
-    @endsection
-    @endsection
+@endsection
+@endsection

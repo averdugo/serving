@@ -43,8 +43,12 @@ function editUser(){
 function getGroupsOptions(id){
     var url ="/admin/users/groupsOption/"+id;
     $.get(url,function(result){
+
+        var data = $.parseJSON(result);
         $('.groupUserDivSelect').fadeIn();
-        $('.userGroup').html(result);
+        $('.subTypeUserDivSelect').fadeIn();
+        $('.userGroup').html(data[0]);
+        $('.userSubType').html(data[1]);
 
     });
 }

@@ -39,6 +39,15 @@
                     ),null,['class'=>'form-control','id'=>'typeEditFormUser']) !!}
                 </div>
                 <div class="form-group">
+                    {!! Form::label('type', 'Selecciona Tipo de Usuario') !!}
+                    {!! Form::select('user_type_id', array(
+                        '' => 'Seleccione',
+                        '1' => 'Admin',
+                        '2' => 'Ots',
+                        '3' => 'Chofer'
+                    ),null,['class'=>'form-control','id'=>'typeEditFormUser']) !!}
+                </div>
+                <div class="form-group">
                     {!! Form::label('group', 'Selecciona Grupo') !!}
                     {!! Form::select('group_id', array(
                         '' => 'Seleccione',
