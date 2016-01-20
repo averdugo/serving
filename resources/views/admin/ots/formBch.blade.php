@@ -31,7 +31,7 @@
                                     <div class="widget-block">
                                         <div class="widget-content box-padding">
                                             {!! Form::open (['route'=>['admin.ots.store'],'method'=>'POST', 'id'=>'stepy_form','class'=>'form-horizontal left-align form-well']) !!}
-                                            <input type="hidden" name="type" value="1">
+                                            <input type="hidden" name="type" value="3">
                                             <fieldset title="Paso 1">
                                                 <legend>Detalles Generales</legend>
                                                 <div class="form-group">

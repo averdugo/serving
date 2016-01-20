@@ -17,8 +17,34 @@ class UsersController extends Controller {
 	public function index()
 	{
 		$users = User::paginate();
+		foreach($users as $u){
+			$u->user_type_id = User::$typeses[$u->user_type_id];
+			if($u->group_id == null ){
+				$u->group_id = "No pertenece a un grupo";
+			}else{
+				$group = Group::findOrFail($u->group_id);
+				$u->group_id = $group->name;
+			}
+		}
 		return view('admin.users.index',compact('users'));
 
+	}
+
+	public function letterSeach($name)
+	{
+		$users = User::where('name', 'like', '%'.$name.'%')->paginate();
+
+		foreach($users as $u){
+			$u->user_type_id = User::$typeses[$u->user_type_id];
+			if($u->group_id == null ){
+				$u->group_id = "No pertenece a un grupo";
+			}else{
+				$group = Group::findOrFail($u->group_id);
+				$u->group_id = $group->name;
+			}
+		}
+
+		return view('admin.users.index',compact('users'));
 	}
 
 	/**
@@ -29,7 +55,7 @@ class UsersController extends Controller {
 	public function store()
 	{
         $user = new User(Request::all());
-        $user->save();
+		$user->save();
 		return $user;
 	}
 

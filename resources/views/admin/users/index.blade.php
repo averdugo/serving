@@ -19,7 +19,8 @@
                     <!-- page heading start-->
                     <div class="page-heading">
                         <h3>
-                            Usuarios <button class="btn btn-default pull-right masUser" data-set="2">+</button>
+                            Usuarios
+                                <button class="btn btn-default pull-right masUser" data-set="2">+</button>
                         </h3>
                         <ul class="breadcrumb">
                             <li>
@@ -28,43 +29,27 @@
                             <li class="active">Usuarios</li>
                         </ul>
                     </div>
+
                     <!-- page heading end-->
-                    <ul class="directory-list">
-                        <li><a href="#">a</a></li>
-                        <li><a href="#">b</a></li>
-                        <li><a href="#">c</a></li>
-                        <li><a href="#">d</a></li>
-                        <li><a href="#">e</a></li>
-                        <li><a href="#">f</a></li>
-                        <li><a href="#">g</a></li>
-                        <li><a href="#">h</a></li>
-                        <li><a href="#">i</a></li>
-                        <li><a href="#">j</a></li>
-                        <li><a href="#">k</a></li>
-                        <li><a href="#">l</a></li>
-                        <li><a href="#">m</a></li>
-                        <li><a href="#">n</a></li>
-                        <li><a href="#">o</a></li>
-                        <li><a href="#">p</a></li>
-                        <li><a href="#">q</a></li>
-                        <li><a href="#">r</a></li>
-                        <li><a href="#">s</a></li>
-                        <li><a href="#">t</a></li>
-                        <li><a href="#">u</a></li>
-                        <li><a href="#">v</a></li>
-                        <li><a href="#">w</a></li>
-                        <li><a href="#">x</a></li>
-                        <li><a href="#">y</a></li>
-                        <li><a href="#">z</a></li>
+                    <form class="form-inline">
+                       <div class="form-group" style="float: right;    margin-right: 15px;">
+                           <input type="text" class="form-control busquedaInput" placeholder="Nombre">
+                           <button class="btn btn-default buscarUsuario"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+
+                    </form>
+                    <ul class="directory-list" >
+
+
                     </ul>
                     <div class="directory-info-row">
                         <div class="row">
                             @foreach($users as $user)
                                 <div id="user{{$user->id}}" class="col-md-6 col-sm-6">
-                                    <div class="panel">
+                                    <div id="userList" class="panel">
                                         <div class="panel-body">
                                             <h4>
-                                                {{ $user->name }}
+                                                {{ $user->name }} /
                                                 <span class="text-muted small">
                                                     {{ $user->user_type_id }}
                                                 </span>

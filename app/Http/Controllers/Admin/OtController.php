@@ -49,29 +49,27 @@ class OtController extends Controller {
 		}elseif($type == 3){
 			return view('admin.ots.indexBch',compact('ots'));
 		}
-
-
 	}
 
 	public function gantt($type)
 	{
-		if($type == 1){
-			return view('admin.ots.gantt1');
-		}elseif($type == 2){
-			return view('admin.ots.gantt2');
-		}elseif($type == 3){
-			return view('admin.ots.gantt3');
-		}
+
+		return view('admin.ots.gantt1',compact('type'));
 	}
 	public function data($type)
 	{
-		$date   	= getdate();
-		$day    	= $date['mday'];
-		$month  	= $date['mon'];
-		$year   	= $date['year'];
-		$primerDia	= date("Y-m-d",mktime(0,0,0,$month,$day-5,$year));
-		$ultimoDia	= date("Y-m-d",mktime(0,0,0,$month,$day+5,$year));
-
+		$req 		= Request::all();
+		if($req == []){
+			$date   	= getdate();
+			$day    	= $date['mday'];
+			$month  	= $date['mon'];
+			$year   	= $date['year'];
+			$primerDia	= date("Y-m-d",mktime(0,0,0,$month,$day-5,$year));
+			$ultimoDia	= date("Y-m-d",mktime(0,0,0,$month,$day+5,$year));
+		}else{
+			$primerDia	= $req['from'];
+			$ultimoDia	= $req['to'];
+		}
 		$ots = Ot::where('type',$type)
 			->whereBetween('start_at', [$primerDia, $ultimoDia])
 			->get();
@@ -79,6 +77,16 @@ class OtController extends Controller {
 		foreach($ots as $o){
 			$o->start_at = date("d-m-Y", strtotime($o->start_at));
 			$o->duration = 1;
+			$rName = Requester::find($o->requester_id);
+			$o->requester_id = $rName->name;
+
+			if($o->type ==1){
+				$o->status = Ot::$statusesDt[$o->status];
+			}elseif($o->type ==2){
+				$o->status = Ot::$statusesAsr[$o->status];
+			}elseif($o->type ==3){
+				$o->status = Ot::$statusesDt[$o->status];
+			}
 
 			if($o->group_id != 0 ){
 				$g = Group::find($o->group_id);
@@ -86,7 +94,7 @@ class OtController extends Controller {
 			};
 		};
 
-		return $ots;
+		return json_encode(array('ots'=>$ots,'from'=>$primerDia,'to'=>$ultimoDia,'type'=>$type));
 	}
 
 	/**

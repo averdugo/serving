@@ -241,6 +241,13 @@ $(document).ready(function(){
         var id = $(this).data('id');
         deleteSite(id);
     })
+    $('.buscarUsuario').click(function(e){
+        e.preventDefault();
+        var name = $('.busquedaInput').val();
+        location.href="/admin/users/letterSeach/"+name;
+
+
+    })
     /*Site CRUD*/
 
 })

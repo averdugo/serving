@@ -32,7 +32,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	protected $hidden = ['password', 'remember_token'];
 
 
-	protected $typeses = array(
+	static $typeses = array(
 		1 => 'DT',
 		2 => 'ASR',
 		3 => 'BCH',

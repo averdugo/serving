@@ -21,6 +21,7 @@ Route::get('admin/ots/gantt/{type}', 'Admin\OtController@gantt');
 Route::get('admin/ots/data/{type}', 'Admin\OtController@data');
 Route::get('admin/allowance/listA', 'Admin\AllowanceController@listA');
 Route::get('admin/sites/nemonico', 'Admin\SiteController@nemonico');
+Route::get('admin/users/letterSeach/{name}', 'Admin\UsersController@letterSeach');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
