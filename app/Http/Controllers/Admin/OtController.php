@@ -26,29 +26,41 @@ class OtController extends Controller {
 
 	public function listA($type)
 	{
+		$req 		= Request::all();
+		if($req == []){
+			$date   	= getdate();
+			$day    	= $date['mday'];
+			$month  	= $date['mon'];
+			$year   	= $date['year'];
+			$primerDia	= date("Y-m-d",mktime(0,0,0,$month,$day-5,$year));
+			$ultimoDia	= date("Y-m-d",mktime(0,0,0,$month,$day+5,$year));
+		}else{
+			$primerDia	= $req['from'];
+			$ultimoDia	= $req['to'];
+			$type		= $req['type'];
+		}
+
 		$ots = DB::table('ots')
 			->where('type', $type)
+			->whereBetween('request_at', [$primerDia, $ultimoDia])
 			->join('ot_details', 'ots.id', '=', 'ot_details.ot_id')
 			->get();
 
-		if($type == 1){
-
-			foreach($ots as $o){
-				$o->status = Ot::$statusesDt[$o->status];
-				$o->detail_type = Ot::$typeDt [$o->detail_type];
-				if($o->ingdt_user_id != 0 ){
-					$user = User::find($o->ingdt_user_id);
-					$o->ingdt_user_id = $user->name;
-				};
+		foreach($ots as $o){
+			$o->status = Ot::$statusesDt[$o->status];
+			$o->detail_type = Ot::$typeDt [$o->detail_type];
+			if($o->ingdt_user_id != 0 ){
+				$user = User::find($o->ingdt_user_id);
+				$o->ingdt_user_id = $user->name;
 			};
+			if($o->group_id != 0 ){
+				$g = Group::find($o->group_id);
+				$o->group_id = $g->name;
+			};
+		};
+		dd($ots);
+		return view('admin.ots.indexDt',compact('ots','type','primerDia','ultimoDia'));
 
-			return view('admin.ots.indexDt',compact('ots'));
-
-		}elseif($type == 2){
-			return view('admin.ots.indexAsr',compact('ots'));
-		}elseif($type == 3){
-			return view('admin.ots.indexBch',compact('ots'));
-		}
 	}
 
 	public function gantt($type)

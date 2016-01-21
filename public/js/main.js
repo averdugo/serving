@@ -245,7 +245,8 @@ $(document).ready(function(){
         e.preventDefault();
         var name = $('.busquedaInput').val();
         location.href="/admin/users/letterSeach/"+name;
-
+    })
+    $('.groupDetail').click(function(){
 
     })
     /*Site CRUD*/

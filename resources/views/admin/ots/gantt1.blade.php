@@ -6,7 +6,6 @@
     <script src="/codebase/dhtmlxgantt.js" type="text/javascript" charset="utf-8"></script>
     <script src="http://export.dhtmlx.com/gantt/api.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" href="/codebase/dhtmlxgantt.css" type="text/css" media="screen" title="no title" charset="utf-8">
-
 @stop
 
 @section('body-class')

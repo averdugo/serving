@@ -33,28 +33,24 @@
                     {!! Form::label('type', 'Selecciona Tipo de Usuario') !!}
                     {!! Form::select('user_type_id', array(
                         '' => 'Seleccione',
-                        '1' => 'Admin',
-                        '2' => 'Ots',
-                        '3' => 'Chofer'
-                    ),null,['class'=>'form-control','id'=>'typeEditFormUser']) !!}
-                </div>
-                <div class="form-group">
-                    {!! Form::label('type', 'Selecciona Tipo de Usuario') !!}
-                    {!! Form::select('user_type_id', array(
-                        '' => 'Seleccione',
-                        '1' => 'Admin',
-                        '2' => 'Ots',
-                        '3' => 'Chofer'
-                    ),null,['class'=>'form-control','id'=>'typeEditFormUser']) !!}
-                </div>
-                <div class="form-group">
-                    {!! Form::label('group', 'Selecciona Grupo') !!}
-                    {!! Form::select('group_id', array(
-                        '' => 'Seleccione',
                         '1' => 'DT',
                         '2' => 'ASR',
-                        '3' => 'BCH'
-                    ),null,['class'=>'form-control','id'=>'groupEditFormUser']) !!}
+                        '3' => 'BCH',
+                        '4' => 'Chofer',
+                        '5' => 'Admin'
+                    ),null,['class'=>'form-control userSelect','id'=>'typeEditFormUser']) !!}
+                </div>
+                <div class="form-group subTypeUserDivSelect" style="display:none">
+                    {!! Form::label('group', 'Selecciona Sub Categoria') !!}
+                    {!! Form::select('subtype', array(
+                        '' => 'Seleccione'),
+                        null,['id'=>'groupSubTypeFormUser','class'=>'form-control userSubType']) !!}
+                </div>
+                <div class="form-group groupUserDivSelect" style="display:none">
+                    {!! Form::label('group', 'Selecciona Grupo') !!}
+                    {!! Form::select('group_id', array(
+                        '' => 'Seleccione'),
+                        null,['id'=>'groupEditFormUser','class'=>'form-control userGroup']) !!}
                 </div>
                 {!! Form::close() !!}
             </div>

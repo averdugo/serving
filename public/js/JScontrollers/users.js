@@ -18,14 +18,25 @@ function getUser(id){
     var url ="/admin/users/"+id+"/edit"
 
     $.get(url,function(result){
-
+        console.log(result);
         $('#idEditFormUser').val(result.id);
         $('#nameEditFormUser').val(result.name);
         $('#emailEditFormUser').val(result.email);
         $('#phoneEditFormUser').val(result.phone);
         $('#addressEditFormUser').val(result.address);
         $('#typeEditFormUser option[value='+result.user_type_id+']').attr('selected','selected');
-        $('#groupEditFormUser option[value='+result.group_id+']').attr('selected','selected');
+
+        if (result.user_type_id == 1 || result.user_type_id == 2) {
+            getGroupsOptions(result.user_type_id)
+        }else{
+            $('.groupUserDivSelect').fadeOut();
+            $('.subTypeUserDivSelect').fadeOut();
+        }
+        setTimeout(function(){
+            $('#groupSubTypeFormUser option[value='+result.subtype+']').attr('selected','selected');
+            $('#groupEditFormUser option[value='+result.group_id+']').attr('selected','selected');
+        }, 500);
+
         $('#editarUsuario').modal();
     });
 }

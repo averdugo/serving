@@ -7,7 +7,7 @@
     </div>
 
     <div class="logo-icon text-center">
-        <a href="home"><img src="/images/logo_icon.png" alt=""></a>
+        <a href="/home"><img src="/images/logo_icon.png" alt=""></a>
     </div>
     <!--logo and iconic logo end-->
 
@@ -63,6 +63,7 @@
                 <ul class="sub-menu-list">
                     <li><a href="#" class="masGroup2">Crear</a></li>
                     <li><a href="/admin/groups">Listado</a></li>
+                    <li><a href="#" class="groupDetail">Detalle</a></li>
                 </ul>
             </li>
             <li class="menu-list"><a href=""><i class="fa fa-bar-chart"></i> <span>Indicadores</span></a>
