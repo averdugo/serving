@@ -30,7 +30,8 @@ class Ot extends Model {
         2 => 'Cancelada',
         3 => 'Cerrada',
         4 => 'Espera',
-        5 => 'Planificado'
+        5 => 'Planificado',
+        6 => 'En Ejecución'
     );
     static $statusesAsr = array(
         0 => '',
@@ -58,5 +59,15 @@ class Ot extends Model {
         11 =>'Rutas Principales',
         12 =>'Walk Test'
     );
+    static $typeAsr = array(
+        0=>'',
+        1=>'Auditoria'
+    );
+
+    static function getDuration($inicio, $fin){
+        $inicio = explode('-',$inicio);
+        $fin = explode('-',$fin);
+        return $fin[2] - $inicio[2];
+    }
 
 }

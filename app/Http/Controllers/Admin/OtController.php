@@ -46,18 +46,30 @@ class OtController extends Controller {
 			->join('ot_details', 'ots.id', '=', 'ot_details.ot_id')
 			->get();
 
-		foreach($ots as $o){
-			$o->status = Ot::$statusesDt[$o->status];
-			$o->detail_type = Ot::$typeDt [$o->detail_type];
-			if($o->ingdt_user_id != 0 ){
-				$user = User::find($o->ingdt_user_id);
-				$o->ingdt_user_id = $user->name;
+		if ($type == 1 || $type == 3) {
+			foreach($ots as $o){
+				$o->status = Ot::$statusesDt[$o->status];
+				$o->detail_type = Ot::$typeDt [$o->detail_type];
+				if($o->ingdt_user_id != 0 ){
+					$user = User::find($o->ingdt_user_id);
+					$o->ingdt_user_id = $user->name;
+				};
+				if($o->group_id != 0 ){
+					$g = Group::find($o->group_id);
+					$o->group_id = $g->name;
+				};
 			};
-			if($o->group_id != 0 ){
-				$g = Group::find($o->group_id);
-				$o->group_id = $g->name;
+
+		}elseif ($type == 2) {
+			foreach($ots as $o){
+				$o->status = Ot::$statusesAsr[$o->status];
+				$o->detail_type = Ot::$typeAsr [$o->detail_type];
+				if($o->group_id != 0 ){
+					$g = Group::find($o->group_id);
+					$o->group_id = $g->name;
+				};
 			};
-		};
+		}
 		//dd($ots);
 		return view('admin.ots.indexDt',compact('ots','type','primerDia','ultimoDia'));
 
@@ -88,7 +100,6 @@ class OtController extends Controller {
 
 		foreach($ots as $o){
 			$o->start_at = date("d-m-Y", strtotime($o->start_at));
-			$o->duration = 1;
 			$rName = Requester::find($o->requester_id);
 			$o->requester_id = $rName->name;
 
@@ -191,6 +202,11 @@ class OtController extends Controller {
 		if($req['type'] == 1){
 
 			$ot = new Ot(Request::all());
+			if ($req['start_at'] != "" && $req['finish_at'] != "") {
+				$ot->duration = Ot::getDuration($req['start_at'],$req['finish_at']);
+			}else {
+				$ot->duration = 0;
+			}
 			$ot->save();
 
 			$otDetail = new OtDetail();
@@ -216,7 +232,13 @@ class OtController extends Controller {
 
 		}elseif($req['type'] == 2){
 			$ot = new Ot(Request::all());
+			if ($req['start_at'] != "" && $req['finish_at'] != "") {
+				$ot->duration = Ot::getDuration($req['start_at'],$req['finish_at']);
+			}else {
+				$ot->duration = 0;
+			}
 			$ot->save();
+
 			$otDetail = new OtDetail();
 			$otDetail->ot_id = $ot->id;
 			$site = Site::find($req['nemonico']);
@@ -244,6 +266,11 @@ class OtController extends Controller {
 
 		}elseif($req['type'] == 3){
 			$ot = new Ot(Request::all());
+			if ($req['start_at'] != "" && $req['finish_at'] != "") {
+				$ot->duration = Ot::getDuration($req['start_at'],$req['finish_at']);
+			}else {
+				$ot->duration = 0;
+			}
 			$ot->save();
 
 			$otDetail = new OtDetail();
@@ -265,8 +292,6 @@ class OtController extends Controller {
 			$ot2->report_id = $report->id;
 			$ot2->save();
 		}
-
-
 	}
 
 	/**
@@ -279,8 +304,65 @@ class OtController extends Controller {
 	{
 		$ot = Ot::find($id);
 		$ot_detail = OtDetail::where('ot_id',$id)->get();
-		var_dump($ot_detail);
-		return json_encode(array('ot'=>$ot,'ot_detail'=>$ot_detail));
+		$report = Report::where('ot_id',$id)->get();
+		$requester = Requester::find($ot->requester_id);
+		$ot->requester_id = $requester->name;
+
+		if ($report[0]->user_id != 0) {
+			$user = User::find($report[0]->user_id);
+			$report[0]->user_id = $user->name;
+		}else {
+			$report[0]->user_id = "No ingresado";
+		}
+		$report[0]->status = Report::$statuses[$report[0]->status];
+
+		if ($ot->group_id != 0) {
+			$group = Group::find($ot->group_id);
+			$ot->group_id = $group->name;
+		}else {
+			$ot->group_id = "No ingresado";
+		}
+		if ($ot->car_id != 0) {
+			$car = Car::find($ot->car_id);
+			$ot->car_id = $car->name;
+		}else {
+			$ot->car_id = "No ingresado";
+		}
+		if ($ot->driver_user_id != 0) {
+			$driver = User::find($ot->driver_user_id);
+			$ot->driver_user_id = $driver->name;
+		}else {
+			$ot->driver_user_id = "No ingresado";
+		}
+		if ($ot_detail[0]->allowance_id != 0) {
+			$allowance = Allowance::find($ot_detail[0]->allowance_id);
+			$ot_detail[0]->allowance_id = $allowance->name;
+		}else {
+			$ot_detail[0]->allowance_id= "No ingresado";
+		}
+
+		if ($ot->type == 1) {
+			$ot->status = Ot::$statusesDt[$ot->status];
+			if ($ot_detail[0]->ingdt_user_id != 0) {
+				$ingdt_user_id = User::find($ot_detail[0]->ingdt_user_id);
+				$ot_detail[0]->ingdt_user_id = $ingdt_user_id->name;
+			}else {
+				$ot_detail[0]->ingdt_user_id = "No ingresado";
+			}
+			if ($ot_detail[0]->ingdt_user_id != 0) {
+				$ingdt_user_id = User::find($ot_detail[0]->ingdt_user_id);
+				$ot_detail[0]->ingdt_user_id = $ingdt_user_id->name;
+			}else {
+				$ot_detail[0]->ingdt_user_id = "No ingresado";
+			}
+
+			$ot_detail[0]->detail_type = Ot::$typeDt[$ot_detail[0]->detail_type];
+
+
+		}
+
+
+		return json_encode(array('ot'=>$ot,'ot_detail'=>$ot_detail,'report'=>$report));
 	}
 
 	/**
@@ -313,7 +395,10 @@ class OtController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$ot = Ot::findOrFail($id);
+		$ot->delete();
+
+        return $id;
 	}
 
 }

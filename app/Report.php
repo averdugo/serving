@@ -12,4 +12,11 @@ class Report extends Model {
         3 => 'BCH'
 
     );
+    static $statuses = array(
+        0 => 'Seleccione',
+        1 => 'En Proceso',
+        2 => 'Enviado',
+        3 => 'N/A',
+        4 => 'Pendiente'
+    );
 }

@@ -90,7 +90,7 @@
                     <li><a href="/admin/sites">Listado</a></li>
                 </ul>
             </li>
-            <li><a href="{{ url('/auth/logout') }}"><i class="fa fa-sign-in"></i> <span>Login Page</span></a></li>
+            <li><a href="/auth/logout"><i class="fa fa-sign-in"></i> <span>Login Page</span></a></li>
 
         </ul>
         <!--sidebar nav end-->

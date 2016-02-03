@@ -54,20 +54,20 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <td>N° Ot</td>
-                                            <td>Tipo</td>
-                                            <td>Tarea</td>
-                                            <td>Region</td>
-                                            <td>Fecha Solicitud</td>
-                                            <td>Grupo</td>
-                                            <td>Estado</td>
-                                            <td>Observacion</td>
-                                            <td>Acciones</td>
+                                            <td style="width: 6%">N° Ot</td>
+                                            <td style="width: 11%">Tipo</td>
+                                            <td style="width: 15%">Tarea</td>
+                                            <td style="width: 4%">Region</td>
+                                            <td style="width: 10%">Fecha Solicitud</td>
+                                            <td style="width: 5%">Grupo</td>
+                                            <td style="width: 6%">Estado</td>
+                                            <td style="width: 25%">Observacion</td>
+                                            <td >Acciones</td>
                                         </tr>
                                     </thead>
                                     <tbody id="tablaListDtOts">
                                         @foreach($ots as $ot)
-                                            <tr>
+                                            <tr id="ots{{$ot->ot_id}}">
                                                 <td>{{$ot->original_ot}}</td>
                                                 <td>{{$ot->detail_type}}</td>
                                                 <td>{{$ot->description}}</td>
@@ -79,7 +79,7 @@
                                                 <td>
                                                     <button class="btn btn-default showOT" data-id="{{$ot->ot_id}}"><i class="fa fa-eye"></i></button>
                                                     <button class="btn btn-default editOT" data-id="{{$ot->ot_id}}"><i class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-default editOT" data-id="{{$ot->ot_id}}"><i class="fa fa-remove"></i></button>
+                                                    <button class="btn btn-default deleteOT" data-id="{{$ot->ot_id}}"><i class="fa fa-remove"></i></button>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -95,6 +95,8 @@
             </div>
             <!-- main content end-->
         </section>
+        {!! Form::open (['route'=>['admin.ots.destroy', ':USER_ID'],'method'=>'DELETE', 'id'=>'deleteFormO']) !!}
+        {!! Form::close() !!}
         @section('js-Extra')
             <script src="/js/jquery.stepy.js"></script>
             <script src="/js/jquery.validate.min.js"></script>

@@ -1,5 +1,25 @@
-function renderDt(){
-    //$()
+function renderDt(a,b,c){
+
+    $('td[data-detailType]').text(b.detail_type);
+    $('td[data-description]').text(a.description);
+    $('td[data-requestAt]').text(a.request_at);
+    $('td[data-region]').text(a.region);
+    $('td[data-ingTel]').text(a.requester_id);
+    $('td[data-status]').text(a.status);
+    $('td[data-startAt]').text(a.start_at);
+    $('td[data-finishAt]').text(a.finish_at);
+    $('td[data-ingDt]').text(b.ingdt_user_id);
+    $('td[data-group]').text(a.group_id);
+    $('td[data-allowances]').text(b.allowance_id);
+    $('td[data-driver]').text(a.driver_user_id);
+    $('td[data-car]').text(a.car_id);
+    $('td[data-reporter]').text(c.user_id);
+    $('td[data-reportAt]').text(c.report_at);
+    $('td[data-reportStatus]').text(c.status);
+    $('td[data-observation]').text(c.observation);
+    $('#verOt').modal();
+    $('.nameOt').html(a.original_ot)
+
 }
 function renderAsr(a,b){
     $('#clasificacionA').html(b.detail_type);
@@ -64,12 +84,14 @@ $(function() {
         var id = $(this).data('id');
         var url = "/admin/ots/"+id;
         $.get(url,function(result){
-            data = JSON.parse(result);
-            $('#verOt').modal();
-            $('.nameOt').html(data.ot.original_ot)
-
-            console.log(data.ot);
-            console.log(data.ot_detail[0]);
+            var data = JSON.parse(result);
+            if(data.ot.type == 1){
+                renderDt(data.ot,data.ot_detail[0],data.report[0]);
+            }else if(data.ot.type == 2){
+                renderAsr(data.ot,data.ot_detail[0],data.report[0]);
+            }else if(data.ot.type == 3){
+                renderDt(data.ot,data.ot_detail[0],data.report[0]);
+            }
         });
     })
     $('body').on('click','.setAllowance',function(){
@@ -77,7 +99,16 @@ $(function() {
         $('#allowanceI').val(id);
         $('#otModalAllowance').modal('hide');
     })
+    $('body').on('click','.deleteOT',function(){
+        var id =$(this).data('id');
 
+        var form = $('#deleteFormO').serializeObject();
+        var url ="/admin/ots/"+id;
+
+        $.post(url, form, function(result){
+            $("#ots"+result).remove();
+        });
+    })
     $('.default-date-picker').datepicker({
         format: 'yyyy-mm-dd'
     });
