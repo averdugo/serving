@@ -58,7 +58,7 @@ class OtController extends Controller {
 				$o->group_id = $g->name;
 			};
 		};
-		dd($ots);
+		//dd($ots);
 		return view('admin.ots.indexDt',compact('ots','type','primerDia','ultimoDia'));
 
 	}
@@ -217,10 +217,9 @@ class OtController extends Controller {
 		}elseif($req['type'] == 2){
 			$ot = new Ot(Request::all());
 			$ot->save();
-
 			$otDetail = new OtDetail();
 			$otDetail->ot_id = $ot->id;
-			$site = Site::where('nemonico',$req['nemonico'])->get();
+			$site = Site::find($req['nemonico']);
 			$otDetail->site_id = $site->id;
 			$otDetail->detail_type = $req['detail_type'];
 			$otDetail->dpr = $req['dpr'];
@@ -278,7 +277,10 @@ class OtController extends Controller {
 	 */
 	public function show($id)
 	{
-
+		$ot = Ot::find($id);
+		$ot_detail = OtDetail::where('ot_id',$id)->get();
+		var_dump($ot_detail);
+		return json_encode(array('ot'=>$ot,'ot_detail'=>$ot_detail));
 	}
 
 	/**

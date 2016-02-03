@@ -1,3 +1,10 @@
+function renderDt(){
+    //$()
+}
+function renderAsr(a,b){
+    $('#clasificacionA').html(b.detail_type);
+    $('#nemonicoA').html(b.detail_type);
+}
 /*=====STEPY WIZARD WITH VALIDATION====*/
 $(function() {
     $('#stepy_form').stepy({
@@ -17,7 +24,6 @@ $(function() {
         },
         rules: {
             'original_ot': 'required',
-
             'description': 'required',
             'request_at': 'required',
             'status': 'required',
@@ -54,6 +60,18 @@ $(function() {
         });
     })
 
+    $('body').on('click','.showOT',function(){
+        var id = $(this).data('id');
+        var url = "/admin/ots/"+id;
+        $.get(url,function(result){
+            data = JSON.parse(result);
+            $('#verOt').modal();
+            $('.nameOt').html(data.ot.original_ot)
+
+            console.log(data.ot);
+            console.log(data.ot_detail[0]);
+        });
+    })
     $('body').on('click','.setAllowance',function(){
         var id =$(this).data('id');
         $('#allowanceI').val(id);
@@ -76,7 +94,7 @@ $(function() {
                     response( $.map( data, function( item, i ) {
                         return {
                             label: data[i].nemonico,
-                            value: data[i].nemonico
+                            value: data[i].id
                         }
                     }));
                 }

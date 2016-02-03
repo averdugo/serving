@@ -20,7 +20,7 @@ function getData(data, type){
                 id          : data.ots[i].id,
                 requester   : data.ots[i].requester_id,
                 status      : data.ots[i].status,
-                pp       : data.ots[i].description,
+                pp          : data.ots[i].description,
                 name        : data.ots[i].original_ot,
                 text        : data.ots[i].description,
                 group       : data.ots[i].group_id,
@@ -62,7 +62,3 @@ $(document).ready(function(){
         getData(data,type);
     })
 })
-
-
-
-

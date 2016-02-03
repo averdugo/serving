@@ -45,6 +45,53 @@ class SiteController extends Controller {
 	}
 
 	/**
+	 * @return array|bool
+     */
+	public function csv() {
+		$filename = __DIR__.'/csv_asr.csv';
+		$delimiter=";";
+
+		//if (!file_exists($filename) || !is_readable($filename))
+			//return FALSE;
+
+		$header = NULL;
+		$data = array();
+
+		if (($handle = fopen($filename, 'r')) !== FALSE) {
+			while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE) {
+				if (!$header)
+					$header = $row;
+				else
+					$data[] = array_combine($header, $row);
+			}
+			fclose($handle);
+		}
+
+		//var_dump($data);
+
+		foreach($data as $d)
+		{
+			  $site = new Site();
+			  $site->name = $d['l'];
+			  $site->nemonico = $d['Nemonico'];
+			  $site->address = $d['Direccion'];
+			  $site->owner_id = 1;
+			  $site->siteid = $d['ID'];
+			  $site->instance = $d['Instancia'];
+			  $site->tecnology = $d['Tecnologia'];
+			  $site->emplz = $d['ID Emplz'];
+			  $site->comuna = $d['Comuna'];
+			  $site->provincia = $d['Provincia'];
+			  $site->region = $d['Region'];
+			  $site->category = $d['Categoria'];
+			  $site->save();
+		}
+
+
+		return "ok";
+	}
+
+	/**
 	 * Show the form for editing the specified resource.
 	 *
 	 * @param  int  $id

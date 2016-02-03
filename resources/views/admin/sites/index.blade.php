@@ -27,7 +27,7 @@
                                 </header>
                                 <div class="panel-body">
                                     <div class="adv-table">
-                                        <table  class="display table table-bordered table-striped" id="dynamic-table">
+                                        <table  class="display table table-bordered table-striped" >
                                             <thead>
                                             <tr>
                                                 <th>Nombre</th>
@@ -52,6 +52,7 @@
                                             @endforeach
                                             </tbody>
                                         </table>
+                                        {!! $sites->render() !!}
                                     </div>
                                 </div>
                             </section>

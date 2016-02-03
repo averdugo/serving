@@ -19,7 +19,7 @@ class UsersController extends Controller {
 		$users = User::paginate();
 		foreach($users as $u){
 			$u->user_type_id = User::$typeses[$u->user_type_id];
-			if($u->group_id == null ){
+			if($u->group_id == 0 ){
 				$u->group_id = "No pertenece a un grupo";
 			}else{
 				$group = Group::findOrFail($u->group_id);

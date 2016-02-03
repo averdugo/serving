@@ -77,9 +77,9 @@
                                                 <td>{{$ot->status}}</td>
                                                 <td>{{$ot->observation}}</td>
                                                 <td>
-                                                    <button class="btn btn-default showOT" data-id="{{$ot->id}}"><i class="fa fa-eye"></i></button>
-                                                    <button class="btn btn-default editOT" data-id="{{$ot->id}}"><i class="fa fa-pencil"></i></button>
-                                                    <button class="btn btn-default editOT" data-id="{{$ot->id}}"><i class="fa fa-remove"></i></button>
+                                                    <button class="btn btn-default showOT" data-id="{{$ot->ot_id}}"><i class="fa fa-eye"></i></button>
+                                                    <button class="btn btn-default editOT" data-id="{{$ot->ot_id}}"><i class="fa fa-pencil"></i></button>
+                                                    <button class="btn btn-default editOT" data-id="{{$ot->ot_id}}"><i class="fa fa-remove"></i></button>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -96,14 +96,21 @@
             <!-- main content end-->
         </section>
         @section('js-Extra')
+            <script src="/js/jquery.stepy.js"></script>
+            <script src="/js/jquery.validate.min.js"></script>
             <script type="text/javascript" src="/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
             <script type="text/javascript" src="/js/bootstrap-daterangepicker/moment.min.js"></script>
             <script type="text/javascript" src="/js/bootstrap-daterangepicker/daterangepicker.js"></script>
             <script src="/js/pickerrange.js"></script>
+            <script src="/js/JScontrollers/ots.js"></script>
+
             <script type="text/javascript">
-            var type = $('#type').val();
-            $("select option[value='"+type+"']").attr("selected","selected");
+                var type = $('#type').val();
+                $("select option[value='"+type+"']").attr("selected","selected");
             </script>
+        @endsection
+        @section('modales')
+            @include('admin.ots.modalVerOt')
         @endsection
 
 @endsection
